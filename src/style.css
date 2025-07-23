@@ -2,7 +2,7 @@ body {
   height: 100dvh;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
+  padding: 1rem 1rem;
   background-color: #f0f0f0;
   display: flex;
   flex-direction: column;
@@ -10,33 +10,95 @@ body {
 main {
   flex: 1 0 auto;
   overflow-y: auto;
-  background-color: #ac8e8e;
 }
 
-#home,
-#about {
+.profile-image {
+  align-items: center;
+  height: 200px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  p {
+    width: 50%;
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #333;
+  }
+}
+
+.profile-text {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  height: 80dvh;
 
   h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
   }
 }
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+#skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+#projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+#experience {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
 
 footer {
-  position: fixed;
-  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   padding: 1rem 0;
-  background-color: #222; /* or any distinct color */
-  color: #fff;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
 }
 
 /* Navbar */
@@ -45,7 +107,6 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   ul {
     display: flex;
     justify-content: space-between;
