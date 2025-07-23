@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="./src/style.css" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Akash's Portfolio</title>
+    <title>Portfolio</title>
   </head>
   <body>
     <header>
@@ -21,10 +21,11 @@
           <img src="/src/logo.svg" alt="Logo" />
         </div>
         <ul>
-          <li><a href="#home">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="">Skills</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -35,11 +36,89 @@
           <h2>Hi, I'm Akash</h2>
           <h1>A Web Developer</h1>
         </div>
-        <div class="profile-image"></div>
       </section>
       <hr />
       <section id="about">
         <h2>About Me</h2>
+        <div class="about-content">
+          <p>
+            I am a passionate web developer with a keen interest in creating
+            dynamic and responsive web applications. I love to learn new
+            technologies and apply them to solve real-world problems.
+          </p>
+          <div class="profile-image">
+            <img
+              src="./public/assets/profile.jpg"
+              alt="profile image"
+              srcset=""
+              class="profile-image"
+            />
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section id="skills">
+        <h2 class="mb-3">Skills</h2>
+
+        <div class="w-100 d-flex justify-content-between">
+          <ul>
+            <h5>Frontend</h5>
+            <li>React.js</li>
+            <li>Next.js</li>
+            <li>Redux</li>
+            <li>Context API</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Bootstrap</li>
+            <li>Axios</li>
+            <li>Tailwind CSS</li>
+          </ul>
+          <ul>
+            <h5>Backend</h5>
+            <li>Nodejs</li>
+            <li>ExpressJs</li>
+            <li>Nestjs</li>
+            <li>REST APIs</li>
+            <li>JWT Auth</li>
+          </ul>
+          <ul>
+            <h5>Database</h5>
+            <li>PostgreSQL</li>
+            <li>MongoDB</li>
+            <li>Firebase</li>
+            <li>Supabase</li>
+            <li>Prisma</li>
+            <li>TypeORM</li>
+            <li>Mongoose</li>
+          </ul>
+          <ul>
+            <h5>Tools & Devops</h5>
+            <li>Docker</li>
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>AWS</li>
+            <li>CI/CD</li>
+            <li>Jira</li>
+            <li>Linux</li>
+            <li>Agile</li>
+          </ul>
+          <ul>
+            <h5>API & Integrations</h5>
+            <li>Socket.io</li>
+            <li>Firebase Auth</li>
+          </ul>
+          <ul>
+            <h5>Languages</h5>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>Python</li>
+            <li>Java</li>
+          </ul>
+        </div>
+      </section>
+      <hr />
+      <section id="projects">
+        <h2>Projects</h2>
         <p>
           I am a passionate web developer with a keen interest in creating
           dynamic and responsive web applications. I love to learn new
@@ -47,9 +126,19 @@
         </p>
       </section>
       <hr />
+      <section id="experience">
+        <h2>Experience</h2>
+        <p>
+          I am a passionate web developer with a keen interest in creating
+          dynamic and responsive web applications. I love to learn new
+          technologies and apply them to solve real-world problems.
+        </p>
+      </section>
+
+      <hr />
     </main>
 
-    <footer>
+    <footer id="contact">
       <div class="social-links">
         <a target="_blank" href="https://github.com/akashkv11">GitHub</a>
         <a target="_blank" href="https://www.linkedin.com/in/akash-k-v/"
