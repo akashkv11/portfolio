@@ -40,6 +40,16 @@ main {
   width: 100%;
 }
 
+.projects-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  div {
+    flex-grow: 1;
+  }
+}
+
 #home {
   display: flex;
   align-items: center;
