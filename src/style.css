@@ -7,6 +7,21 @@
   --accent-color: #6366f1;
   --accent-hover: #818cf8;
   --divider: #1f2937;
+
+  --font-family: "IBM Plex Mono", monospace;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 3.5rem;
+  --font-size-2xl: 2rem;
+
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  --line-height-base: 1.5;
+  --line-height-heading: 1.25;
 }
 
 /* Global */
@@ -17,9 +32,95 @@ body {
   padding: 1rem 1rem;
   background-color: var(--background);
   color: var(--primary-text);
-  display: flex;
-  flex-direction: column;
   color: #c9d1d9;
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+.ibm-plex-mono-thin {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.ibm-plex-mono-extralight {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.ibm-plex-mono-light {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ibm-plex-mono-regular {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-mono-medium {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ibm-plex-mono-semibold {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.ibm-plex-mono-bold {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ibm-plex-mono-thin-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.ibm-plex-mono-extralight-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.ibm-plex-mono-light-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ibm-plex-mono-regular-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+  font-size: var(--font-size-xl);
+}
+
+.ibm-plex-mono-medium-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ibm-plex-mono-semibold-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.ibm-plex-mono-bold-italic {
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
 }
 
 /* Header */
@@ -55,12 +156,14 @@ nav {
 .navbar {
   background-color: var(--background) !important;
 }
-.navbar-brand {
-  color: var(--primary-text) !important;
-  font-size: 1.5rem;
+
+.nav-item {
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 /* Main */
+
 main {
   flex: 1 0 auto;
   overflow-y: auto;
@@ -72,7 +175,7 @@ main {
 }
 
 .cv-download-btn {
-  background-color: var(--accent-color);
+  background-color: var(--background);
   color: var(--primary-text);
   border: none;
   padding: 0.5rem 1rem;
@@ -80,10 +183,27 @@ main {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.cv-download-btn:hover {
-  background-color: var(--accent-hover);
+
+/* From Uiverse.io by biswacpcode */
+
+.cv-download-btn::before {
+  margin-left: auto;
 }
 
+.cv-download-btn::after,
+.cv-download-btn::before {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  transition: 0.5s;
+}
+
+.cv-download-btn:hover::after,
+.cv-download-btn:hover::before {
+  width: 100%;
+}
 .about-content {
   display: flex;
   align-items: center;
@@ -128,7 +248,7 @@ main {
   padding-top: 0.5rem;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  height: 80dvh;
+  height: 95dvh;
 
   h1 {
     font-size: 2.5rem;
