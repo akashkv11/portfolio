@@ -147,6 +147,27 @@ nav {
   }
 }
 
+.banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff3cd;
+  color: #856404;
+  text-align: center;
+  padding: 10px 0;
+  font-family: sans-serif;
+  z-index: 1001;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.fixed-top {
+  position: fixed;
+  top: 30px;
+  width: 100%;
+  z-index: 1000;
+}
+
 .nav-link {
   color: var(--primary-text) !important;
 }
