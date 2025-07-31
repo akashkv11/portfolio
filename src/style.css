@@ -232,6 +232,8 @@ main {
     font-size: 1.2rem;
     line-height: 1.5;
     color: var(--secondary-text);
+    font-size: var(--font-size-base);
+    text-align: justify;
   }
 }
 
