@@ -313,6 +313,16 @@ main {
     color: var(--secondary-text);
   }
 }
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  h5 {
+    color: var(--secondary-text);
+  }
+}
 
 /* Footer */
 
@@ -323,4 +333,42 @@ footer {
   align-items: center;
   width: 100%;
   padding: 1rem 0;
+}
+
+/* media queries */
+
+@media screen and (max-width: 768px) {
+  .profile-image {
+    height: 150px;
+    width: 150px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    p {
+      width: 100%;
+      max-width: none;
+    }
+  }
+
+  .projects-container {
+    flex-direction: column;
+    div {
+      width: 100%;
+    }
+  }
+
+  #home h1 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .profile-image {
+    height: 120px;
+    width: 120px;
+  }
+
+  #home h1 {
+    font-size: 1.5rem;
+  }
 }
