@@ -213,6 +213,13 @@ main {
     border-radius: 50%;
   }
 }
+.navbar-toggler {
+  margin-top: 1%;
+  border: none;
+  background-color: transparent;
+  color: var(--primary-text);
+}
+
 .social-icons {
   display: flex;
   justify-content: center;
