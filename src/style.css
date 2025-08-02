@@ -36,6 +36,9 @@ body {
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
+  background: url("/public/assets/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-color: #000; /* fallback */
 }
 
 .ibm-plex-mono-thin {
