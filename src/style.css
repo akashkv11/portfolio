@@ -360,6 +360,7 @@ main {
 
 .projects-container {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   align-items: center;
   justify-content: center;
@@ -452,12 +453,51 @@ footer {
   padding: 1rem 0;
 }
 
-/* media queries */
+/* Small devices (landscape phones, 576px and up) */
 @media screen and (min-width: 576px) {
+  /* Styles for small devices like larger phones and small tablets */
+  .projects-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2rem;
+    .card {
+      flex: 0 1 calc(50% - 2rem);
+    }
+  }
 }
 
+/* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
+  /* Styles for tablets and small desktops */
+  .about-content {
+    flex-direction: row;
+    gap: 4rem;
+  }
+  .projects-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+
+    .card {
+      flex: 0 1 calc(50% - 2rem);
+    }
+  }
 }
 
+/* Large devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
+  /* Styles for desktops and larger screens */
+
+  .projects-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+
+    .card {
+      flex: 0 1 calc(25% - 2rem);
+    }
+  }
 }
