@@ -237,7 +237,8 @@ main {
   }
 }
 .navbar-toggler {
-  margin-top: 1%;
+  margin-top: 8%;
+  margin-right: 0.5rem;
   border: none;
   background-color: transparent;
   color: var(--primary-text);
