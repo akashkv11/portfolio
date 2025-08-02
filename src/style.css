@@ -290,6 +290,12 @@ main {
     margin-top: auto;
   }
 }
+.card-body p {
+  display: flex;
+  align-items: end;
+  flex-grow: 1;
+}
+
 .card-title {
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
@@ -456,6 +462,12 @@ footer {
 /* Small devices (landscape phones, 576px and up) */
 @media screen and (min-width: 576px) {
   /* Styles for small devices like larger phones and small tablets */
+
+  .card-body p {
+    display: flex;
+    align-items: center;
+  }
+
   .projects-container {
     display: flex;
     flex-direction: row;
