@@ -404,6 +404,12 @@ footer {
       width: 100%;
     }
   }
+  .navbar-toggler {
+    margin-top: 6%;
+    border: none;
+    background-color: transparent;
+    color: var(--primary-text);
+  }
 
   #home h1 {
     font-size: 2rem;
