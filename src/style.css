@@ -200,6 +200,15 @@ main {
   border-radius: 50%;
 }
 
+.single-skill {
+  border-radius: 0.5rem;
+  border: 0.5px var(--primary-text);
+  border-bottom-style: groove;
+  border-top-style: groove;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem;
+}
+
 .single-section {
   display: flex;
   align-items: center;
@@ -214,7 +223,7 @@ main {
 
 .single-skill {
   .active {
-    border: 2px groove var(--accent-color);
+    border: 1px groove var(--accent-color);
     background-color: var(--background) !important;
     color: var(--primary-text) !important;
   }
