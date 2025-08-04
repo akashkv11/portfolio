@@ -43,6 +43,7 @@
       ⚠️ This website is currently under development. Features may be
       incomplete.
     </div>
+    <div id="particles-js"></div>
     <div class="container-fluid">
       <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
@@ -367,8 +368,34 @@
         </section>
 
         <hr />
+
         <section id="contact">
-          <h2>Get In Touch</h2>
+          <h2>Contact Me</h2>
+          <div class="form-container">
+            <form class="form" id="contact-form">
+              <div class="form-group">
+                <label for="email">Name</label>
+                <input required="" name="name" id="name" type="text" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input required="" name="email" id="email" type="email" />
+              </div>
+              <div class="form-group">
+                <label for="textarea">Message</label>
+                <textarea
+                  required=""
+                  cols="50"
+                  rows="10"
+                  id="textarea"
+                  name="textarea"
+                >
+                </textarea>
+              </div>
+
+              <button type="submit" class="form-submit-btn">Submit</button>
+            </form>
+          </div>
         </section>
 
         <hr />
@@ -378,6 +405,7 @@
         <p>&copy; 2023 Akash. All rights reserved.</p>
       </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -388,6 +416,7 @@
       integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
       crossorigin="anonymous"
     ></script>
+
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

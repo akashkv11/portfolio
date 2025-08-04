@@ -11,5 +11,9 @@
   "devDependencies": {
     "typescript": "~5.8.3",
     "vite": "^7.0.4"
+  },
+  "dependencies": {
+    "emailjs-com": "^3.2.0",
+    "particles.js": "^2.0.0"
   }
 }

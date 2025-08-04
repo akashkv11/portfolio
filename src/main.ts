@@ -1,4 +1,6 @@
 import iconsList from "./tech-icons";
+import emailjs from "emailjs-com";
+declare var particlesJS: any;
 
 const downloadCV = () => {
   const link = document.createElement("a");
@@ -36,7 +38,6 @@ Object.entries(iconsList).forEach(([sectionName, sectionItems], index) => {
   if (skillsTab) {
     skillsTab.appendChild(li);
   }
-  console.error("Skills tab element not found.");
 
   // --- Tab Pane ---
   const tabPane = document.createElement("div");
@@ -60,3 +61,35 @@ Object.entries(iconsList).forEach(([sectionName, sectionItems], index) => {
     skillsTabContent.appendChild(tabPane);
   }
 });
+
+const form = document.getElementById("contact-form") as HTMLFormElement | null;
+
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", form);
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        alert("Message sent successfully!");
+        form.reset();
+      })
+      .catch((error) => {
+        console.error("Failed to send message:", error);
+        alert("Something went wrong. Please try again later.");
+      });
+  });
+}
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+particlesJS.load(
+  "particles-js",
+  "/public/assets/particlesjs-config.json",
+  function () {
+    console.log("callback - particles.js config loaded");
+  }
+);
