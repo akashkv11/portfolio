@@ -36,6 +36,12 @@ body {
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
 }
+
+hr {
+  margin-inline: auto;
+  width: 80%;
+}
+
 #particles-js {
   position: fixed;
   top: 0;
@@ -476,6 +482,11 @@ footer {
 @media screen and (min-width: 576px) {
   /* Styles for small devices like larger phones and small tablets */
 
+  hr {
+    width: 50%;
+    margin: 1rem auto;
+  }
+
   .navbar {
     border-radius: 20px;
   }
@@ -499,6 +510,12 @@ footer {
 /* Medium devices (tablets, 768px and up) */
 @media screen and (min-width: 768px) {
   /* Styles for tablets and small desktops */
+
+  hr {
+    width: 40%;
+    margin: 1rem auto;
+  }
+
   .about-content {
     flex-direction: row;
     gap: 4rem;
@@ -518,6 +535,10 @@ footer {
 /* Large devices (desktops, 992px and up) */
 @media screen and (min-width: 992px) {
   /* Styles for desktops and larger screens */
+
+  hr {
+    margin: 5rem auto;
+  }
 
   .projects-container {
     display: flex;
