@@ -65,6 +65,8 @@ Object.entries(iconsList).forEach(([sectionName, sectionItems], index) => {
   }
 });
 
+// contact form submission
+
 const form = document.getElementById("contact-form") as HTMLFormElement | null;
 
 if (form) {
