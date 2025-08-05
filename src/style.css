@@ -1,6 +1,8 @@
-/* Variables */
-
+/* ========== VARIABLES ==========
+Define global CSS variables for colors, fonts, sizes, weights, and line heights
+*/
 :root {
+  /* Colors */
   --background: #000000;
   --primary-text: #fff;
   --secondary-text: #9ca3af;
@@ -8,8 +10,10 @@
   --accent-hover: #818cf8;
   --divider: #1f2937;
 
+  /* Typography */
   --font-family: "IBM Plex Mono", monospace;
 
+  /* Font Sizes */
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
@@ -17,21 +21,24 @@
   --font-size-xl: 3.5rem;
   --font-size-2xl: 2rem;
 
+  /* Font Weights */
   --font-weight-normal: 400;
   --font-weight-bold: 700;
 
+  /* Line Heights */
   --line-height-base: 1.5;
   --line-height-heading: 1.25;
 }
 
-/* Global */
+/* ========== GLOBAL STYLES ==========
+Basic global styles for body, typography, and common elements
+*/
 body {
   height: 100dvh;
   margin: 0;
   padding: 1rem 1rem;
   background-color: var(--background);
-  color: var(--primary-text);
-  color: #c9d1d9;
+  color: #c9d1d9; /* override var(--primary-text) */
   font-family: var(--font-family);
   font-size: var(--font-size-base);
   line-height: var(--line-height-base);
@@ -42,6 +49,9 @@ hr {
   width: 80%;
 }
 
+/* ========== PARTICLES BACKGROUND ==========
+Position particles canvas behind all other content
+*/
 #particles-js {
   position: fixed;
   top: 0;
@@ -52,28 +62,59 @@ hr {
   pointer-events: auto; /* Required for particle interactivity */
 }
 
+/* ========== MAIN CONTENT WRAPPER ==========
+Ensure content appears above particles
+*/
 #content {
   position: relative;
   z-index: 1;
 }
 
-/* Header */
-
-/* Navbar */
-
-nav {
-  ul {
-    li > a:hover {
-      text-decoration: underline;
-    }
-
-    li > a:active {
-      text-decoration: none;
-      color: inherit;
-    }
-  }
+/* ========== NAVIGATION BAR ==========
+Styles related to navigation and links inside nav
+*/
+nav ul li > a:hover {
+  text-decoration: underline;
 }
 
+nav ul li > a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  background-color: rgba(14, 11, 11, 0.253) !important; /* transparent black */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-radius: 20px;
+}
+
+.nav-item {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.nav-link {
+  color: var(--primary-text) !important;
+}
+
+.nav-link:hover {
+  color: var(--accent-hover) !important;
+}
+
+.navbar-toggler {
+  border: none;
+  background-color: transparent;
+  color: var(--primary-text);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='100' height='100' viewBox='0 0 50 50'%0Astyle='fill:%23FFFFFF;'%3E%3Cpath d='M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+/* ========== BANNER ==========
+Fixed banner at top with warning message style
+*/
 .banner {
   position: fixed;
   top: 0;
@@ -88,6 +129,9 @@ nav {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* ========== POSITION UTILITIES ==========
+Fixed positioning utilities for header elements
+*/
 .fixed-top {
   position: fixed;
   top: 0;
@@ -95,93 +139,15 @@ nav {
   z-index: 1000;
 }
 
-.nav-link {
-  color: var(--primary-text) !important;
-}
-.nav-link:hover {
-  color: var(--accent-hover) !important;
-}
-
-.navbar {
-  background-color: rgba(14, 11, 11, 0.253) !important; /* transparent white */
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-}
-
-.nav-item {
-  margin-right: 1rem;
-  margin-left: 1rem;
-}
-
-/* Main */
-
-main {
-  flex: 1 0 auto;
-  overflow-y: auto;
-}
-
+/* ========== PROFILE IMAGE ==========
+Circular profile image sizing and alignment
+*/
 .profile-image {
   align-items: center;
   height: 200px;
   width: 200px;
   border-radius: 50%;
 }
-
-.single-skill {
-  border-radius: 0.5rem;
-  border: 0.5px var(--primary-text);
-  border-bottom-style: groove;
-  border-top-style: groove;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 0.5rem;
-}
-
-.single-section {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  flex-wrap: wrap;
-  padding: 2rem;
-  gap: 1rem;
-  span {
-    min-width: fit-content;
-  }
-}
-
-.single-skill {
-  .active {
-    border: 1px groove var(--accent-color);
-    background-color: var(--background) !important;
-    color: var(--primary-text) !important;
-  }
-}
-
-.tech-item {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  border: 1px solid var(--divider);
-  border-radius: 20.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin: 0;
-  }
-}
-.navbar-toggler {
-  border: none;
-  background-color: transparent;
-  color: var(--primary-text);
-}
-
-.navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='100' height='100' viewBox='0 0 50 50'%0Astyle='fill:%23FFFFFF;'%3E%3Cpath d='M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z'%3E%3C/path%3E%3C/svg%3E");
-}
-
 .social-icons {
   display: flex;
   justify-content: center;
@@ -196,37 +162,100 @@ main {
   }
 }
 
+/* ========== SKILLS SECTION ==========
+Containers and individual skill styles
+*/
+.single-skill {
+  border-radius: 0.5rem;
+  border: 0.5px var(--primary-text);
+  border-bottom-style: groove;
+  border-top-style: groove;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem;
+}
+
+.single-skill .active {
+  border: 1px groove var(--accent-color);
+  background-color: var(--background) !important;
+  color: var(--primary-text) !important;
+}
+
+.single-section {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding: 2rem;
+  gap: 1rem;
+}
+
+.single-section span {
+  min-width: fit-content;
+}
+
+.tech-item {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border: 1px solid var(--divider);
+  border-radius: 20.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.tech-item img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin: 0;
+}
+
+/* ========== MAIN LAYOUT ==========
+Main container behavior and overflow control
+*/
+main {
+  flex: 1 0 auto;
+  overflow-y: auto;
+}
+
+/* ========== CARDS ==========
+Card container, image, and text styling
+*/
 .card {
   background-color: transparent;
   border: 1px solid var(--divider);
   border-radius: 0.5rem;
   padding: 1rem;
-  img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-  }
-  svg {
-    width: 040px;
-    height: 040px;
-    fill: var(--primary-text);
-    transition: fill 0.3s ease;
-    cursor: pointer;
-  }
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.card svg {
+  width: 40px;
+  height: 40px;
+  fill: var(--primary-text);
+  transition: fill 0.3s ease;
+  cursor: pointer;
 }
 
 .card-body {
   display: flex;
   flex-direction: column;
-
-  a {
-    margin-top: auto;
-  }
 }
+
+.card-body a {
+  margin-top: auto;
+}
+
 .card-body p {
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   flex-grow: 1;
 }
 
@@ -235,6 +264,7 @@ main {
   font-weight: var(--font-weight-bold);
   color: var(--primary-text);
 }
+
 .card-text {
   font-size: var(--font-size-base);
   color: var(--secondary-text);
@@ -242,6 +272,9 @@ main {
   line-height: var(--line-height-base);
 }
 
+/* ========== BUTTONS ==========
+CV download button with hover underline animation
+*/
 .cv-download-btn {
   background-color: var(--background);
   color: var(--primary-text);
@@ -253,7 +286,6 @@ main {
 }
 
 /* From Uiverse.io by biswacpcode */
-
 .cv-download-btn::before {
   margin-left: auto;
 }
@@ -272,6 +304,10 @@ main {
 .cv-download-btn:hover::before {
   width: 100%;
 }
+
+/* ========== ABOUT CONTENT ==========
+Layout and typography for about section
+*/
 .about-content {
   margin-top: 1rem;
   display: flex;
@@ -280,27 +316,34 @@ main {
   justify-content: space-around;
   width: 100%;
   gap: 2rem;
-  p {
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: 1.5;
-    color: var(--secondary-text);
-    font-size: var(--font-size-base);
-    text-align: justify;
-  }
 }
 
+.about-content p {
+  text-align: justify;
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: var(--secondary-text);
+  margin: 0;
+}
+
+/* ========== TOAST NOTIFICATIONS ==========
+Toast header image and body styling
+*/
 .toast-header img {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
 }
+
 .toast-body {
   color: var(--background);
   font-family: var(--font-family);
   font-size: var(--font-size-sm);
 }
 
+/* ========== PROFILE TEXT ==========
+Centered column layout for profile text
+*/
 .profile-text {
   display: flex;
   flex-direction: column;
@@ -309,6 +352,9 @@ main {
   width: 100%;
 }
 
+/* ========== PROJECTS ==========
+Container layout for projects section
+*/
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -316,16 +362,22 @@ main {
   align-items: center;
   justify-content: center;
   width: 100%;
-  div {
-    align-self: stretch;
-    flex-grow: 1;
-    p {
-      line-height: 1.5;
-      color: var(--secondary-text);
-    }
-  }
 }
 
+.projects-container div {
+  align-self: stretch;
+  flex-grow: 1;
+}
+
+.projects-container div p {
+  line-height: 1.5;
+  color: var(--secondary-text);
+  margin: 0;
+}
+
+/* ========== SECTION WRAPPERS ==========
+Styling for specific page sections with IDs
+*/
 #home {
   display: flex;
   align-items: center;
@@ -334,67 +386,43 @@ main {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   height: 95dvh;
-
-  h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-  }
-}
-#about {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-}
-#skills {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  div > ul {
-    h5 {
-      color: var(--secondary-text);
-    }
-    li {
-      list-style: none;
-      margin: 0.5rem 0;
-      color: var(--secondary-text);
-    }
-  }
 }
 
-#projects {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
+#home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
-#experience {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  h5 {
-    color: var(--secondary-text);
-  }
-}
+
+#about,
+#skills,
+#projects,
+#experience,
 #contact {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-  h5 {
-    color: var(--secondary-text);
-  }
+  padding: 2rem;
 }
 
-/* Footer */
+#skills div > ul h5 {
+  color: var(--secondary-text);
+}
 
+#skills div > ul li {
+  list-style: none;
+  margin: 0.5rem 0;
+  color: var(--secondary-text);
+}
+
+#experience h5,
+#contact h5 {
+  color: var(--secondary-text);
+}
+
+/* ========== FOOTER ==========
+Footer layout and spacing
+*/
 footer {
   display: flex;
   flex-direction: column;
@@ -404,39 +432,30 @@ footer {
   padding: 1rem 0;
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media screen and (min-width: 576px) {
-  /* Styles for small devices like larger phones and small tablets */
+/* ========== MEDIA QUERIES ==========
+Responsive adjustments for different viewport widths
+*/
 
+/* Small devices (≥576px) */
+@media screen and (min-width: 576px) {
   hr {
     width: 50%;
     margin: 1rem auto;
   }
 
-  .navbar {
-    border-radius: 20px;
-  }
-
-  .card-body p {
-    display: flex;
-    align-items: center;
-  }
-
   .projects-container {
-    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 2rem;
-    .card {
-      flex: 0 1 calc(50% - 2rem);
-    }
+  }
+
+  .projects-container .card {
+    flex: 0 1 calc(50% - 2rem);
   }
 }
 
-/* Medium devices (tablets, 768px and up) */
+/* Medium devices (≥768px) */
 @media screen and (min-width: 768px) {
-  /* Styles for tablets and small desktops */
-
   hr {
     width: 40%;
     margin: 1rem auto;
@@ -446,34 +465,29 @@ footer {
     flex-direction: row;
     gap: 4rem;
   }
+
   .projects-container {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     gap: 2rem;
+  }
 
-    .card {
-      flex: 0 1 calc(50% - 2rem);
-    }
+  .projects-container .card {
+    flex: 0 1 calc(50% - 2rem);
   }
 }
 
-/* Large devices (desktops, 992px and up) */
+/* Large devices (≥992px) */
 @media screen and (min-width: 992px) {
-  /* Styles for desktops and larger screens */
-
   hr {
     margin: 5rem auto;
   }
 
   .projects-container {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
     gap: 2rem;
+  }
 
-    .card {
-      flex: 0 1 calc(25% - 2rem);
-    }
+  .projects-container .card {
+    flex: 0 1 calc(25% - 2rem);
   }
 }
