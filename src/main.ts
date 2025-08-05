@@ -5,7 +5,7 @@ declare var particlesJS: any;
 // resume download
 const downloadCV = () => {
   const link = document.createElement("a");
-  link.href = "/cv/akash_full_stack_developer.pdf"; // path relative to public/
+  link.href = "/cv/akash_software_engineer.pdf"; // path relative to public/
   link.download = "Akash_KV_CV.pdf"; // filename on download
   link.click();
 };
