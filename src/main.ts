@@ -73,7 +73,7 @@ const form = document.getElementById("contact-form") as HTMLFormElement | null;
 if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
+    switchOffButton(); // Disable the button and show "Sending..." text
     emailjs
       .sendForm(
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
@@ -83,13 +83,31 @@ if (form) {
       )
       .then(() => {
         showToast("success");
+        switchOnButton(); // Re-enable the button and reset text
         form.reset(); // Reset the form after successful submission
       })
       .catch((error) => {
         console.error("Failed to send message:", error);
+        switchOnButton(); // Re-enable the button even if there's an error
         showToast("error");
       });
   });
+}
+
+function switchOffButton() {
+  const button = document.getElementById(
+    "form-submit-btn"
+  ) as HTMLButtonElement;
+  button.disabled = true;
+  button.textContent = "Sending...";
+}
+
+function switchOnButton() {
+  const button = document.getElementById(
+    "form-submit-btn"
+  ) as HTMLButtonElement;
+  button.disabled = false;
+  button.textContent = "Submit";
 }
 
 function showToast(type: "success" | "error") {
