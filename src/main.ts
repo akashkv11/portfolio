@@ -2,15 +2,18 @@ import iconsList from "./tech-icons";
 import emailjs from "emailjs-com";
 declare var particlesJS: any;
 
+// resume download
 const downloadCV = () => {
   const link = document.createElement("a");
-  link.href = "/assets/cv/akash_full_stack_developer"; // path relative to public/
+  link.href = "/assets/cv/akash_full_stack_developer.pdf"; // path relative to public/
   link.download = "Akash_KV_CV.pdf"; // filename on download
   link.click();
 };
 
 const cvDownloadBtn = document.querySelector(".cv-download-btn");
 cvDownloadBtn?.addEventListener("click", downloadCV);
+
+// skill tabs filling
 const skillsTab = document.getElementById("skills-tab");
 const skillsTabContent = document.getElementById("skills-tabContent");
 
