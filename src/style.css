@@ -375,6 +375,17 @@ main {
   }
 }
 
+.toast-header img {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+.toast-body {
+  color: var(--background);
+  font-family: var(--font-family);
+  font-size: var(--font-size-sm);
+}
+
 .profile-text {
   display: flex;
   flex-direction: column;
@@ -645,7 +656,7 @@ footer {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  align-self: flex-start;
+  align-self: center;
   font-family: inherit;
   color: var(--primary-text);
   font-weight: 600;
@@ -662,4 +673,9 @@ footer {
 
 .form-container .form-submit-btn:hover {
   border-color: #fff;
+}
+
+.form-submit-btn:focus {
+  background-color: var(--primary-text);
+  color: var(--background);
 }

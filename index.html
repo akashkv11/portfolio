@@ -396,7 +396,7 @@
                     cols="50"
                     rows="10"
                     id="textarea"
-                    name="textarea"
+                    name="message"
                   >
                   </textarea>
                 </div>
@@ -408,6 +408,47 @@
 
           <hr />
         </main>
+
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+          <div
+            id="successToast"
+            class="toast hide"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
+            <div class="toast-header">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/7518/7518748.png"
+                class="rounded me-2"
+                alt="..."
+              />
+              <strong class="me-auto">Sent successfully</strong>
+            </div>
+            <div class="toast-body">Your message has been sent!</div>
+          </div>
+        </div>
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+          <div
+            id="errorToast"
+            class="toast hide"
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+          >
+            <div class="toast-header">
+              <img
+                src="https://cdn0.iconfinder.com/data/icons/shift-free/32/Error-512.png"
+                class="rounded me-2"
+                alt="..."
+              />
+              <strong class="me-auto">Sent error</strong>
+            </div>
+            <div class="toast-body">
+              Message not sent!. Please try again later
+            </div>
+          </div>
+        </div>
 
         <footer>
           <p>&copy; 2023 Akash. All rights reserved.</p>

@@ -1,6 +1,7 @@
 import iconsList from "./tech-icons";
 import emailjs from "emailjs-com";
 declare var particlesJS: any;
+declare var bootstrap: any;
 
 // resume download
 const downloadCV = () => {
@@ -81,15 +82,27 @@ if (form) {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
-        alert("Message sent successfully!");
-        form.reset();
+        showToast("success");
+        form.reset(); // Reset the form after successful submission
       })
       .catch((error) => {
         console.error("Failed to send message:", error);
-        alert("Something went wrong. Please try again later.");
+        showToast("error");
       });
   });
 }
+
+function showToast(type: "success" | "error") {
+  const toastLiveExample = document.getElementById(
+    type === "success" ? "successToast" : "errorToast"
+  );
+
+  if (toastLiveExample) {
+    const toast = new bootstrap.Toast(toastLiveExample);
+    toast.show();
+  }
+}
+
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 particlesJS.load(
   "particles-js",
