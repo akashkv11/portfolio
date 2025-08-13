@@ -70,6 +70,67 @@ Ensure content appears above particles
   z-index: 1;
 }
 
+.wrapper {
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(52rem, 100%)
+    1fr;
+}
+
+.wrapper > * {
+  grid-column: 2;
+}
+
+.wrapper h2 {
+  text-align: center;
+}
+
+.full-bleed {
+  width: 100%;
+  grid-column: 1 / 4;
+}
+
+/* From Uiverse.io by Spacious74 */
+button {
+  font-size: 1.4em;
+  padding: 0.2em 0.6em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 2px 2px 3px #000000b4;
+}
+
+.btn-container {
+  position: relative;
+  padding: 3px;
+  margin-top: 2rem;
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  border-radius: 0.9em;
+  transition: all 0.4s ease;
+}
+
+.btn-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  border-radius: 0.9em;
+  z-index: -10;
+  filter: blur(0);
+  transition: filter 0.4s ease;
+}
+
+.btn-container:hover::before {
+  background: linear-gradient(90deg, #03a9f4, #f441a5);
+  filter: blur(1.2em);
+}
+.btn-container:active::before {
+  filter: blur(0.2em);
+}
+
 /* ========== NAVIGATION BAR ==========
 Styles related to navigation and links inside nav
 */
@@ -165,7 +226,7 @@ Containers and individual skill styles
   border-bottom-style: groove;
   border-top-style: groove;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 0.5rem;
+  margin: 0;
 }
 
 .single-skill .active {
@@ -210,7 +271,6 @@ Main container behavior and overflow control
 */
 main {
   flex: 1 0 auto;
-  overflow-y: auto;
 }
 
 /* ========== CARDS ==========
@@ -405,7 +465,7 @@ Styling for specific page sections with IDs
 
 #skills div > ul li {
   list-style: none;
-  margin: 0.5rem 0;
+  /* margin: 0.5rem 0; */
   color: var(--secondary-text);
 }
 

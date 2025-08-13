@@ -51,7 +51,7 @@ Object.entries(iconsList).forEach(([sectionName, sectionItems], index) => {
   tabPane.setAttribute("aria-labelledby", `${slug}-tab`);
 
   const innerDiv = document.createElement("div");
-  innerDiv.className = "single-section p-3 d-flex flex-wrap gap-2";
+  innerDiv.className = "single-section p-1 d-flex flex-wrap gap-2";
 
   sectionItems.forEach((tech) => {
     const span = document.createElement("span");

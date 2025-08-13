@@ -5,21 +5,21 @@
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="./public/assets/favicon_io/apple-touch-icon.png"
+      href="/assets/favicon_io/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./public/assets/favicon_io/favicon-32x32.png"
+      href="/assets/favicon_io/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./public/assets/favicon_io/favicon-16x16.png"
+      href="/assets/favicon_io/favicon-16x16.png"
     />
-    <link rel="manifest" href="/public/assets//favicon_io/site.webmanifest" />
+    <link rel="manifest" href="/assets/favicon_io/site.webmanifest" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -47,7 +47,7 @@
       <div class="container-fluid">
         <header>
           <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-            <div class="container-fluid justify-content-end pe-0">
+            <div class="container-fluid justify-content-end px-0">
               <button
                 class="navbar-toggler"
                 type="button"
@@ -60,7 +60,7 @@
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mt-3 m-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav mt-2 m-auto mb-2 mb-lg-0">
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#"
                       >Home</a
@@ -83,7 +83,7 @@
                     <a
                       class="nav-link active"
                       aria-current="page"
-                      href="#projects"
+                      href=" #projects"
                       >Projects</a
                     >
                   </li>
@@ -208,36 +208,44 @@
           </section>
           <hr />
           <section class="hidden" id="about">
-            <h2>About Me</h2>
-            <div class="about-content">
-              <div class="profile-image">
-                <img
-                  src="./public/assets/profile.jpg"
-                  alt="profile image"
-                  srcset=""
-                  class="profile-image"
-                />
+            <div class="wrapper">
+              <h2>About Me</h2>
+              <div class="about-content">
+                <div class="profile-image">
+                  <img
+                    src="./public/assets/profile.jpg"
+                    alt="profile image"
+                    srcset=""
+                    class="profile-image"
+                  />
+                </div>
+                <p>
+                  I'm a Full Stack Developer with 2+ years of experience
+                  building scalable web applications using the MERN stack. I
+                  specialize in API design, database optimization, and real-time
+                  systems with tools like React, Next.js, NestJS, PostgreSQL,
+                  and Socket.io. I've led high-impact projects, mentored devs,
+                  and delivered solutions that improve performance, security,
+                  and user experience.
+                </p>
               </div>
-              <p>
-                I'm a Full Stack Developer with 2+ years of experience building
-                scalable web applications using the MERN stack. I specialize in
-                API design, database optimization, and real-time systems with
-                tools like React, Next.js, NestJS, PostgreSQL, and Socket.io.
-                I've led high-impact projects, mentored devs, and delivered
-                solutions that improve performance, security, and user
-                experience.
-              </p>
             </div>
           </section>
           <hr />
           <section class="hidden" id="skills">
-            <h2 class="mb-3">Skills</h2>
+            <div class="wrapper">
+              <h2 class="mb-3">Skills</h2>
 
-            <!-- Tabs (Nav) -->
-            <ul class="nav nav-pills mb-3" id="skills-tab" role="tablist"></ul>
+              <!-- Tabs (Nav) -->
+              <ul
+                class="nav nav-pills mb-5 d-flex flex-wrap justify-content-start justify-content-lg-between justify-content-md-evenly gap-3"
+                id="skills-tab"
+                role="tablist"
+              ></ul>
 
-            <!-- Tabs Content -->
-            <div class="tab-content" id="skills-tabContent"></div>
+              <!-- Tabs Content -->
+              <div class="tab-content" id="skills-tabContent"></div>
+            </div>
           </section>
 
           <hr />
@@ -369,6 +377,11 @@
                 </div>
               </div>
             </div>
+            <div class="btn-container">
+              <a href="projects.html">
+                <button class="button">View More</button>
+              </a>
+            </div>
           </section>
           <hr />
           <section class="hidden" id="experience">
@@ -385,11 +398,23 @@
               <form class="form" id="contact-form">
                 <div class="form-group">
                   <label for="email">Name</label>
-                  <input required="" name="name" id="name" type="text" />
+                  <input
+                    required=""
+                    name="name"
+                    id="name"
+                    type="text"
+                    placeholder="Your Name"
+                  />
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input required="" name="email" id="email" type="email" />
+                  <input
+                    required=""
+                    name="email"
+                    id="email"
+                    type="email"
+                    placeholder="Your Email"
+                  />
                 </div>
                 <div class="form-group">
                   <label for="textarea">Message</label>
