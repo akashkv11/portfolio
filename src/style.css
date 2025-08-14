@@ -533,7 +533,7 @@ Responsive adjustments for different viewport widths
 /* Large devices (≥992px) */
 @media screen and (min-width: 992px) {
   hr {
-    margin: 5rem auto;
+    margin: 3rem auto;
   }
 
   .projects-container {
