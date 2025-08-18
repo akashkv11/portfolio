@@ -349,6 +349,11 @@ nav ul li > a:active {
   outline: none;
 }
 
+.quote-text {
+  max-width: calc(100% - 2rem);
+  justify-self: center;
+}
+
 .hidden {
   opacity: 0;
   transform: translateY(50px); /* optional slide-up effect */
@@ -684,6 +689,9 @@ Responsive adjustments for different viewport widths
 @media screen and (min-width: 576px) {
   .ibm-plex-mono-regular-italic {
     font-size: var(--font-size-xl);
+  }
+  .quote-text {
+    max-width: calc(90% - 5rem);
   }
 
   hr {
