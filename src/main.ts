@@ -148,3 +148,57 @@ particlesJS.load(
     console.log("callback - particles.js config loaded");
   }
 );
+const textArray = [
+  "Full stack developer.",
+  "Problem solver.",
+  "Team player.",
+  "Mentor.",
+];
+const typingSpeed = 100; // speed per character
+const erasingSpeed = 60; // erasing speed
+const delayBetween = 1500; // delay before erasing/next
+
+let textIndex = 0;
+let charIndex = 0;
+const typewriter = document.getElementById("typewriter") as HTMLElement;
+
+function type() {
+  if (charIndex < textArray[textIndex].length) {
+    typewriter.textContent += textArray[textIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingSpeed);
+  } else {
+    setTimeout(erase, delayBetween);
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    typewriter.textContent = textArray[textIndex].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, erasingSpeed);
+  } else {
+    textIndex = (textIndex + 1) % textArray.length;
+    setTimeout(type, typingSpeed);
+  }
+}
+
+// Start the effect
+document.addEventListener("DOMContentLoaded", () => {
+  if (textArray.length) setTimeout(type, delayBetween);
+
+  fetchProgrammingQuote();
+});
+
+function fetchProgrammingQuote() {
+  const url = "https://programming-quotes-api.vercel.app/api/random";
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      const quoteElement = document.getElementById("quote") as HTMLElement;
+      quoteElement.textContent = `"${data.quote}"`;
+    })
+    .catch((error) => {
+      console.error("Error fetching programming quote:", error);
+    });
+}

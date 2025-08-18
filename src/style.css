@@ -17,9 +17,9 @@ Define global CSS variables for colors, fonts, sizes, weights, and line heights
   --font-size-xs: 0.75rem;
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
-  --font-size-lg: 1.125rem;
-  --font-size-xl: 3.5rem;
-  --font-size-2xl: 2rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2rem;
+  --font-size-2xl: 4rem;
 
   /* Font Weights */
   --font-weight-normal: 400;
@@ -70,6 +70,23 @@ Ensure content appears above particles
   z-index: 1;
 }
 
+#typewriter {
+  min-height: 100px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  background: #00ffcc;
+  margin-left: 5px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
 .wrapper {
   display: grid;
   grid-template-columns:
@@ -589,8 +606,13 @@ Responsive adjustments for different viewport widths
 
 /* Small devices (≥576px) */
 @media screen and (min-width: 576px) {
+  .ibm-plex-mono-regular-italic {
+    font-size: var(--font-size-xl);
+  }
+
   hr {
     width: 50%;
+
     margin: 1rem auto;
   }
 
