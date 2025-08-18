@@ -269,6 +269,16 @@ nav ul li > a:active {
   transform: translateY(0);
 }
 
+.read-more-link {
+  color: var(--primary-text);
+  text-decoration: none;
+}
+
+.read-more-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
 /* ========== POSITION UTILITIES ==========
 Fixed positioning utilities for header elements
 */

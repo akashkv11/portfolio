@@ -1,0 +1,124 @@
+/* ========== VARIABLES ==========
+Define global CSS variables for colors, fonts, sizes, weights, and line heights
+*/
+:root {
+  /* Colors */
+  --background: #000000;
+  --primary-text: #fff;
+  --secondary-text: #9ca3af;
+  --accent-color: #6366f1;
+  --accent-hover: #818cf8;
+  --divider: #1f2937;
+
+  /* Typography */
+  --font-family: "IBM Plex Mono", monospace;
+
+  /* Font Sizes */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 3.5rem;
+  --font-size-2xl: 2rem;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-base: 1.5;
+  --line-height-heading: 1.25;
+}
+
+/* ========== GLOBAL STYLES ==========
+Basic global styles for body, typography, and common elements
+*/
+body {
+  height: 100dvh;
+  margin: 0;
+  padding: 1rem 1rem;
+  background-color: var(--background);
+  color: #c9d1d9; /* override var(--primary-text) */
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+}
+
+/* ========== PARTICLES BACKGROUND ==========
+Position particles canvas behind all other content
+*/
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0; /* Push it behind everything */
+  pointer-events: auto; /* Required for particle interactivity */
+}
+
+/* ========== MAIN CONTENT WRAPPER ==========
+Ensure content appears above particles
+*/
+#content {
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns:
+    1fr
+    min(45rem, 100%)
+    1fr;
+}
+
+.wrapper > * {
+  grid-column: 2;
+}
+
+.wrapper h2 {
+  text-align: left;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.full-bleed {
+  width: 100%;
+  grid-column: 1 / 4;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(50px); /* optional slide-up effect */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== MEDIA QUERIES ==========
+Responsive adjustments for different viewport widths
+*/
+
+/* Small devices (≥576px) */
+@media screen and (min-width: 576px) {
+}
+
+/* Medium devices (≥768px) */
+@media screen and (min-width: 768px) {
+}
+
+/* Large devices (≥992px) */
+@media screen and (min-width: 992px) {
+}
+
+/* Extra large devices (≥1200px) */
+@media screen and (min-width: 1367px) {
+}
+
+/* Extra large devices (≥1400px) */
+@media screen and (min-width: 1400px) {
+}
