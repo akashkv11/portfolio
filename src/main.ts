@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function fetchProgrammingQuote() {
-  const url = "https://programming-quotes-api.vercel.app/api/random";
+  const url = "https://programming-quotesapi.vercel.app/api/random";
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
