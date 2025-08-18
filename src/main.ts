@@ -186,19 +186,4 @@ function erase() {
 // Start the effect
 document.addEventListener("DOMContentLoaded", () => {
   if (textArray.length) setTimeout(type, delayBetween);
-
-  fetchProgrammingQuote();
 });
-
-function fetchProgrammingQuote() {
-  const url = "https://programming-quotesapi.vercel.app/api/random";
-  fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      const quoteElement = document.getElementById("quote") as HTMLElement;
-      quoteElement.textContent = `"${data.quote}"`;
-    })
-    .catch((error) => {
-      console.error("Error fetching programming quote:", error);
-    });
-}
