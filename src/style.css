@@ -287,6 +287,67 @@ nav ul li > a:active {
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='100' height='100' viewBox='0 0 50 50'%0Astyle='fill:%23FFFFFF;'%3E%3Cpath d='M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z'%3E%3C/path%3E%3C/svg%3E");
 }
+.navbar-toggler:focus {
+  box-shadow: none;
+} /* === Hamburger → X using the default .navbar-toggler-icon (no JS) === */
+
+/* Override Bootstrap's SVG bars */
+.navbar-toggler-icon {
+  background-image: none !important;
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--primary-text); /* middle bar */
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Top + bottom bars */
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background-color: var(--primary-text);
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out,
+    opacity 0.3s ease-in-out;
+}
+
+/* Collapsed state (hamburger) — Bootstrap adds .collapsed when closed */
+.navbar-toggler.collapsed .navbar-toggler-icon {
+  background-color: var(--primary-text); /* show middle bar */
+}
+.navbar-toggler.collapsed .navbar-toggler-icon::before {
+  top: -7px;
+  transform: none;
+}
+.navbar-toggler.collapsed .navbar-toggler-icon::after {
+  top: 7px;
+  transform: none;
+}
+
+/* Expanded state (X) — Bootstrap removes .collapsed when open */
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon {
+  background-color: transparent; /* hide middle bar */
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.navbar-toggler:not(.collapsed) .navbar-toggler-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Optional: clean button chrome */
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  padding: 0.25rem 0.5rem;
+  outline: none;
+}
 
 .hidden {
   opacity: 0;
