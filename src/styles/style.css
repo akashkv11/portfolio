@@ -18,7 +18,7 @@ Define global CSS variables for colors, fonts, sizes, weights, and line heights
   --font-size-sm: 0.875rem;
   --font-size-base: 1rem;
   --font-size-lg: 1.5rem;
-  --font-size-xl: 2rem;
+  --font-size-xl: 3.5rem;
   --font-size-2xl: 4rem;
 
   /* Font Weights */
@@ -72,12 +72,11 @@ Ensure content appears above particles
 
 #typewriter {
   display: inline-block;
-  border-right: 3px solid var(--primary-text); /* <-- cursor */
 
   padding-right: 5px;
   white-space: nowrap;
   overflow: hidden;
-  min-height: 2.5rem;
+  min-height: 2rem;
   text-align: center;
 }
 
@@ -688,12 +687,16 @@ Responsive adjustments for different viewport widths
 /* Small devices (≥576px) */
 @media screen and (min-width: 576px) {
   .ibm-plex-mono-regular-italic {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-lg);
   }
+
   .quote-text {
     max-width: calc(90% - 5rem);
   }
 
+  .ibm-plex-mono-bold-italic {
+    font-size: var(--font-size-2xl);
+  }
   hr {
     width: 50%;
 
