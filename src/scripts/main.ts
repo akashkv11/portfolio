@@ -1,4 +1,4 @@
-import iconsList from "./tech-icons";
+import iconsList from "../constants/tech-icons";
 import emailjs from "emailjs-com";
 declare var particlesJS: any;
 declare var bootstrap: any;

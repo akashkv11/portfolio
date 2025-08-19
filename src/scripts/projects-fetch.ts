@@ -1,4 +1,4 @@
-import type { GitHubRepoList } from "./types/github-repo.type";
+import type { GitHubRepoList } from "../types/github-repo.type";
 declare var particlesJS: any;
 
 const response = await fetch("https://api.github.com/users/akashkv11/repos");
