@@ -1,5 +1,4 @@
 import type { GitHubRepoList } from "../types/github-repo.type";
-declare var particlesJS: any;
 
 const response = await fetch("https://api.github.com/users/akashkv11/repos");
 
@@ -82,12 +81,3 @@ function sortReposWithDescription(repos: GitHubRepoList) {
       return 0;
     });
 }
-
-/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load(
-  "particles-js",
-  "/assets/particlesjs-config.json",
-  function () {
-    console.log("callback - particles.js config loaded");
-  }
-);

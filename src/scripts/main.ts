@@ -1,6 +1,5 @@
 import iconsList from "../constants/tech-icons";
 import emailjs from "emailjs-com";
-declare var particlesJS: any;
 declare var bootstrap: any;
 
 // resume download
@@ -141,13 +140,7 @@ function showToast(type: "success" | "error") {
 }
 
 /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-particlesJS.load(
-  "particles-js",
-  "/assets/particlesjs-config.json",
-  function () {
-    console.log("callback - particles.js config loaded");
-  }
-);
+
 const textArray = [
   "Full stack developer.",
   "Problem solver.",
