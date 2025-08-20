@@ -164,7 +164,25 @@ function type() {
     setTimeout(erase, delayBetween);
   }
 }
+// Get the button
+const backToTopBtn = document.getElementById("backToTop") as HTMLButtonElement;
 
+// Show button when user scrolls down
+window.onscroll = function () {
+  if (
+    document.body.scrollTop > 200 ||
+    document.documentElement.scrollTop > 200
+  ) {
+    backToTopBtn.style.display = "block";
+  } else {
+    backToTopBtn.style.display = "none";
+  }
+};
+
+// Smooth scroll to top when clicked
+backToTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 function erase() {
   if (charIndex > 0) {
     typewriter.textContent = textArray[textIndex].substring(0, charIndex - 1);
