@@ -99,6 +99,10 @@ Ensure content appears above particles
   transform: translateY(0);
 }
 
+.main-container {
+  padding-inline: 1.5rem;
+}
+
 /* ========== MEDIA QUERIES ==========
 Responsive adjustments for different viewport widths
 */
