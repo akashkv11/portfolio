@@ -959,10 +959,24 @@ Footer layout and spacing
 footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   padding: 1rem 0;
+  background: var(--background);
+  color: var(--secondary-text);
+  border-top: 1px solid var(--divider);
+  margin-top: 2rem;
+  backdrop-filter: blur(10px);
+}
+footer .copyright-text {
+  order: 1;
+  margin-top: 1rem;
+}
+.footer-message {
+  color: var(--secondary-text);
+  font-size: var(--font-size-lg);
+  text-align: center;
 }
 
 /* ========== MEDIA QUERIES ==========
@@ -971,6 +985,23 @@ Responsive adjustments for different viewport widths
 
 /* Small devices (≥576px) */
 @media screen and (min-width: 576px) {
+  footer {
+    /* flex-direction: row; */
+    height: 125px;
+    padding: 1rem 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    .social-icons {
+      flex: 1;
+      order: 2;
+      gap: 1.5rem;
+    }
+    .copyright-text .footer-message {
+      height: 100px;
+      align-self: center;
+    }
+  }
+
   .ibm-plex-mono-regular-italic {
     font-size: var(--font-size-lg);
   }
