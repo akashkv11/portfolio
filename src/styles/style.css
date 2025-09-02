@@ -95,7 +95,7 @@ Ensure content appears above particles
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -233,6 +233,9 @@ Ensure content appears above particles
   overflow: hidden;
   background: var(--background);
   border: 2px solid var(--divider);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-link > * {
