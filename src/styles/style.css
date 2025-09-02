@@ -95,7 +95,7 @@ Ensure content appears above particles
 
 .projects-grid {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); */
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -159,6 +159,9 @@ Ensure content appears above particles
 
 .project-content {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* take up full remaining height */
 }
 
 .project-header {
@@ -191,6 +194,7 @@ Ensure content appears above particles
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-bottom: 1.5rem;
+  margin-top: auto; /* pushes buttons to bottom */
 }
 
 .tech-tag {
@@ -253,6 +257,8 @@ Ensure content appears above particles
 }
 
 .project-card {
+  display: flex;
+  flex-direction: column;
   animation: fadeInUp 0.6s ease-out forwards;
 }
 
@@ -701,7 +707,7 @@ Card container, image, and text styling
 CV download button with hover underline animation
 */
 .cv-download-btn {
-  background-color: var(--background);
+  background-color: inherit;
   color: var(--primary-text);
   border: none;
   padding: 0.5rem 1rem;

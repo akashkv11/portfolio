@@ -50,6 +50,68 @@ const allProjectDetails = {
       ],
     ],
   },
+
+  univote: {
+    introduction:
+      "Univote is a hybrid polling application that simplifies the voting process by eliminating traditional user registration. Users can create polls, share them via unique codes or links, and voters participate using only email-based OTP verification. The platform supports both anonymous and authenticated poll creation with built-in security measures to ensure vote integrity and prevent abuse.",
+    tech: "Next.js, Tailwind CSS, Redis (Upstash - planned), Google OAuth2, Nodemailer, Zod validation",
+    role: "Solo full-stack developer - architecture, frontend, backend, database design",
+    github: "", // add repo link when available
+    purpose: `The inspiration behind Univote was to dramatically simplify the voting process. Traditional polling systems often require complex sign-up procedures, but Univote reduces barriers to participation - voters only need to enter an OTP received via email. The application targets real-world scenarios like classroom polls, event feedback, and community decision-making where quick, secure participation is essential. My primary learning objective was mastering Next.js as a full-stack framework, since I had no prior experience with it.`,
+    technicalSpotlight:
+      "Authentication is handled with email-based OTP verification via Nodemailer + Google OAuth2. Unique poll codes are generated with collision checking, and Zod is integrated for robust input validation. Planned Redis integration will add IP tracking and rate limiting to further secure the system.",
+    flow: [
+      "Users create polls with questions and multiple choice options",
+      "System generates unique poll codes with database collision checking",
+      "Poll creators share codes/links with voters",
+      "Voters access polls via shared links or entering codes",
+      "Email-based OTP verification ensures one vote per email",
+      "Poll creators can view results (if ownership claimed via email)",
+    ],
+    auth: "OTP-based authentication with Nodemailer + Google OAuth2 ensures secure voting without traditional accounts. Planned Redis support will add rate limiting and IP tracking.",
+    challenges: [
+      [
+        "Next.js Learning Curve",
+        "Understanding SSR, SSG, file-based routing, and API routes was initially difficult. I overcame this by incrementally building and testing small features until comfortable combining them.",
+      ],
+      [
+        "Google OAuth2 + Nodemailer Integration",
+        "Configuration between Google services and Nodemailer required testing multiple authentication scopes. Careful documentation review led to a stable, reliable email delivery setup.",
+      ],
+      [
+        "Unique Code Generation",
+        "Preventing poll code collisions required implementing a database check loop to ensure uniqueness before assignment.",
+      ],
+      [
+        "Full-Stack Complexity",
+        "Balancing server-side rendering with API routes in the same framework required learning execution contexts thoroughly.",
+      ],
+    ],
+    status:
+      "Univote is actively in development with OTP-based authentication and core poll creation implemented. Redis integration for rate limiting and IP tracking is planned next.",
+    lessons: [
+      [
+        "Next.js Mastery",
+        "Gained strong experience with SSR/SSG and how they improve performance and SEO when applied correctly.",
+      ],
+      [
+        "API Design Evolution",
+        "Learned to structure API routes more thoughtfully within Next.js, balancing server and client needs.",
+      ],
+      [
+        "Security-First Thinking",
+        "Rate limiting, OTP cooldowns, and abuse-prevention strategies reinforced the importance of designing security into the foundation.",
+      ],
+      [
+        "Data Validation Benefits",
+        "Zod reduced debugging time and improved reliability by catching errors early with declarative validation.",
+      ],
+      [
+        "Project Scope Management",
+        "Learned to prioritize core features over nice-to-have additions to stay aligned with project goals.",
+      ],
+    ],
+  },
 } as const;
 
 export default allProjectDetails;
