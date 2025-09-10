@@ -1003,7 +1003,9 @@ Responsive adjustments for different viewport widths
       align-self: center;
     }
   }
-
+  footer a:has(img) {
+    display: none;
+  }
   .ibm-plex-mono-regular-italic {
     font-size: var(--font-size-lg);
   }
