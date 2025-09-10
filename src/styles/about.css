@@ -9,6 +9,7 @@ Define global CSS variables for colors, fonts, sizes, weights, and line heights
   --accent-color: #6366f1;
   --accent-hover: #818cf8;
   --divider: #1f2937;
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
 
   /* Typography */
   --font-family: "IBM Plex Mono", monospace;
@@ -28,8 +29,15 @@ Define global CSS variables for colors, fonts, sizes, weights, and line heights
   /* Line Heights */
   --line-height-base: 1.5;
   --line-height-heading: 1.25;
-}
+  --text-primary: #ffffff;
+  --text-secondary: #a0a9c0;
+  --accent-color: #64ffda;
+  --shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  --border-radius: 20px;
 
+  --dark-bg: transparent;
+  --card-bg: transparent;
+}
 /* ========== GLOBAL STYLES ==========
 Basic global styles for body, typography, and common elements
 */
@@ -100,7 +108,197 @@ Ensure content appears above particles
 }
 
 .main-container {
-  padding-inline: 1.5rem;
+  padding-inline: .5rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(1deg);
+  }
+}
+
+/* Header */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--primary-gradient);
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.hero-content {
+  text-align: center;
+  max-width: 800px;
+  padding: 0 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #fff, #64ffda);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 20px rgba(100, 255, 218, 0.3));
+  }
+  to {
+    filter: drop-shadow(0 0 30px rgba(100, 255, 218, 0.6));
+  }
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+/* Sections */
+.section {
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: transparent;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-card {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.section-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  /* background: var(--secondary-gradient); */
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.section-card:hover::before {
+  transform: translateX(0);
+}
+
+.section-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+  border-color: rgba(100, 255, 218, 0.3);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-gradient);
+  border-radius: 2px;
+}
+
+.section p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+}
+
+/* Special styling for the first section */
+.intro-section {
+  background: linear-gradient(
+    135deg,
+    rgba(102, 126, 234, 0.1),
+    rgba(118, 75, 162, 0.1)
+  );
+}
+
+.intro-section .section-title {
+  color: #f093fb;
+}
+
+
+
+/* Skills highlights */
+.highlight {
+  background: linear-gradient(45deg, var(--accent-color), #f093fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+
+
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-gradient);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-gradient);
 }
 
 /* ========== MEDIA QUERIES ==========
@@ -109,6 +307,10 @@ Responsive adjustments for different viewport widths
 
 /* Small devices (≥576px) */
 @media screen and (min-width: 576px) {
+  .section-title {
+  font-size: 2.5rem;
+ 
+}
 }
 
 /* Medium devices (≥768px) */
